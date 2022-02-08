@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('http://fonts.cdnfonts.com/css/basis-grotesque-pro');
+
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Basis Grotesque Pro', sans-serif;
+}
+
+// Variables Colores
+$color1:rgb(5, 160, 208);
+$color2:rgb(230, 51, 18);
+$color3:rgb(238, 113, 90);
+$color4:#96A9C2;
+$color5:#A2BECE;
+$color6:#F3F2DC;
+$color7:rgb(216, 206, 192);
+$color8:#D8DBDA;
+$color9:#2c2f3f;
+$color10: #dc3545;
+
+body {
+    background-color: $color6;
+}
+
+// Seccion Header
+.navbar {
+    background-color: $color6;
+
+    a {
+        color: $color9;
+        font-size: 22px;
+        font-family: 'Basis Grotesque Pro', sans-serif;
+    }
+
+    .navbar-brand {
+        color: $color3;
+        font-size: 16px;
+        font-weight: bold;
+        padding-left: 80px;
+
+        img {
+            border: 5px solid $color9;
+        }
+    }
+
+    .navbar-nav {
+        border-bottom: 2px solid $color3;
+        padding-bottom: 8px;
+
+        // gap: 150px;       
+        li {
+            position: relative;
+
+            &:before {
+                content: "";
+                display: block;
+                width: 0;
+                height: 3px;
+                background: $color3;
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transition: all .3s;
+            }
+
+            &:hover:before {
+                width: 100%;
+                left: 0;
+            }
+        }
+
+        .dropdown-menu {
+            background-color: $color6;
+            opacity: 0.8;
+            border: 0;
+            box-shadow: 2px 2px 2px 2px $color3;
+
+            a:hover {
+                background-color: $color6;
+                color: $color3;
+                font-weight: bold;
+                transition: all .3s;
+            }
+        }
+
+        #navbarDropdownMenuLink {
+            background-color: $color3;
+        }
+    }
+}
+
+// Seccion Home
+.home {
+    width: 100%;
+    height: 800px;
+    display: flex;
+
+    .galeria {
+        width: 40%;
+        background-color: $color6;
+        display: flex;
+        overflow: hidden;
+
+        .izquierda-galeria {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 5px;
+            margin-left: 10px;
+            animation: downup 10s infinite linear;
+            animation-direction: reverse;
+
+            @keyframes downup {
+                from {
+                    transform: translatey(-1000px);
+                }
+
+                to {
+                    transform: translatey(-120px);
+                }
+            }
+
+            &:hover {
+                animation-play-state: paused;
+            }
+
+            $asesinosseriales1: (1: andrei-chikatilo,
+                2: ed-gein,
+                3: edmund-kemper,
+                4: jeffrey-dahmer,
+            );
+
+            @each $asesino,
+            $nombre in $asesinosseriales1 {
+                .imagen#{$asesino} {
+                    background-image: url("../imagenes/animacion/#{$nombre}.jpg");
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+        }
+
+        .derecha-galeria {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 5px;
+            padding-top: 200px;
+            margin-right: 8px;
+            animation: downup 10s infinite linear;
+            animation-direction: reverse;
+
+            &:hover {
+                animation-play-state: paused;
+            }
+
+            $asesinosseriales2: (5: luis-alfredo-garavito,
+                6: pedro-alonsolopez,
+                7: richard-ramirez,
+                8: ted-bundy,
+            );
+
+            @each $asesino,
+            $nombre in $asesinosseriales2 {
+                .imagen#{$asesino} {
+                    background-image: url("../imagenes/animacion/#{$nombre}.jpg");
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+        }
+
+        .imagen {
+            width: 98%;
+            min-height: 380px;
+            border-radius: 11px;
+
+            &:hover {
+                transform: scale(1.1);
+                filter: opacity(.5);
+            }
+        }
+    }
+
+    .inner {
+        width: 60%;
+        padding-top: 250px;
+        margin-bottom: 0px;
+        border-radius: 0%;
+        background-color: $color6;
+        overflow: hidden;
+
+        .display-4 {
+            color: $color2;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .lead {
+            display: block;
+            font-size: 21px;
+            font-size: bold;
+            font-family: 'Basis Grotesque Pro', sans-serif;
+            white-space: nowrap;
+            width: 25ch;
+            color: $color9;
+            animation: typing 8s steps(25), blink 1s step-end alternate;
+            overflow: hidden;
+
+            @keyframes typing {
+                from {
+                    width: 0;
+                }
+            }
+
+            @keyframes blink {
+                50% {
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 519px) {
+    .home {
+        display: flex;
+        flex-direction: column-reverse;
+
+        .galeria {
+            width: 100%;
+            height: 50%;
+        }
+
+        .inner {
+            width: 100%;
+            height: 50%;
+            padding-top: 10px;
+
+            .lead {
+                width: 90%;
+                margin-block-start: 0%;
+                margin-block-end: 0%;
+            }
+        }
+    }
+}
+
+@media (min-width: 520px) and (max-width: 982px) {
+    .home {
+        display: flex;
+        flex-direction: column-reverse;
+
+        .galeria {
+            width: 100%;
+            height: 50%;
+        }
+
+        .inner {
+            width: 100%;
+            height: 50%;
+            padding-top: 70px;
+
+            .lead {
+                width: 90%;
+                margin-block-start: 0%;
+                margin-block-end: 0%;
+            }
+        }
+    }
+}
+
+// Seccion Biografia
+.biografia {
+    width: 100%;
+    height: 780px;
+
+    .superior {
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        padding-top: 100px;
+        background-color: $color8;
+
+        img {
+            border-radius: 0.3rem;
+            position: absolute;
+            box-shadow: 2px 2px 5px $color9;
+        }
+    }
+
+    .inferior {
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-color: $color2;
+    }
+}
+
+.escrito-biografia {
+    height: min-content;
+
+    .m-3 {
+        color: $color2;
+    }
+
+    p {
+        font-size: 18px;
+        color: $color9;
+    }
+}
+
+@media (max-width: 519px) {
+    .biografia {
+        height: 650px;
+
+        img {
+            height: 450px;
+            width: 90%;
+        }
+    }
+}
+
+@media (min-width: 520px) and (max-width: 982px) {
+    .biografia {
+        height: 750px;
+
+        img {
+            height: 550px;
+            width: 90%;
+        }
+    }
+}
+
+// Seccion Publicaciones
+.escrito-publicaciones {
+    .text-center {
+        color: $color2;
+    }
+
+    p {
+        font-size: 18px;
+        color: $color9;
+    }
+}
+
+.publicaciones {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .card {
+        background-color: $color6;
+
+        .card-title {
+            color: $color2;
+        }
+
+        .card-text {
+            font-size: 18px;
+            color: $color9;
+        }
+
+        .btn-primary {
+            background-color: $color10;
+            font-weight: bold;
+            border-color: $color10;
+            border-radius: 8px;
+
+            &:hover {
+                background-color: $color1;
+                border-color: $color1;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .escrito-publicaciones {
+        padding-right: 0%;
+        padding-left: 0%;
+
+        .text-center {
+            margin: 0%;
+        }
+    }
+}
+
+// Seccion Contacto
+.escrito-contacto {
+    h2 {
+        color: $color2;
+    }
+
+    p {
+        font-size: 18px;
+        color: $color9;
+    }
+}
+
+@media (max-width: 768px) {
+    .escrito-contacto {
+        padding-right: 0%;
+        padding-left: 0%;
+    }
+}
+
+.contact-form {
+    background: -webkit-linear-gradient(left, $color1, $color5);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 70%;
+    box-shadow: 0px 10px 10px -6px $color1;
+
+    form {
+        padding: 14%;
+
+        .row {
+            margin-bottom: -7%;
+        }
+    }
+
+    h3 {
+        margin-bottom: 8%;
+        margin-top: -10%;
+        text-align: center;
+        color: $color2;
+    }
+
+    .btnContact {
+        width: 50%;
+        border: none;
+        border-radius: 1rem;
+        padding: 1.5%;
+        background: $color2;
+        font-weight: 600;
+        color: $color8;
+        cursor: pointer;
+    }
+
+    .form-control {
+        border-radius: 1rem;
+    }
+
+    .contact-image {
+        text-align: center;
+
+        img {
+            border-radius: 6rem;
+            width: 11%;
+            margin-top: -3%;
+        }
+    }
+
+    .btnContactSubmit {
+        width: 50%;
+        border-radius: 1rem;
+        padding: 1.5%;
+        color: $color8;
+        background-color: $color1;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        width: 85%;
+
+        .btnContact {
+            width: 60%;
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1071px) {
+    .contact-form {
+        width: 75%;
+
+        .btnContact {
+            width: 70%;
+        }
+    }
+}
+
+// Seccion Footer
+.footer-superior {
+    background-color: $color7;
+}
+
+.footer-inferior {
+    background-color: $color9;
+}
+
+// Partial HTML secciones podcast
+@import "podcast"

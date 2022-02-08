@@ -1,0 +1,659 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url("http://fonts.cdnfonts.com/css/basis-grotesque-pro");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url("http://fonts.cdnfonts.com/css/basis-grotesque-pro");
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Basis Grotesque Pro", sans-serif;
+}
+
+body {
+  background-color: #F3F2DC;
+}
+
+.navbar {
+  background-color: #F3F2DC;
+}
+.navbar a {
+  color: #2c2f3f;
+  font-size: 22px;
+  font-family: "Basis Grotesque Pro", sans-serif;
+}
+.navbar .navbar-brand {
+  color: #ee715a;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 80px;
+}
+.navbar .navbar-brand img {
+  border: 5px solid #2c2f3f;
+}
+.navbar .navbar-nav {
+  border-bottom: 2px solid #ee715a;
+  padding-bottom: 8px;
+}
+.navbar .navbar-nav li {
+  position: relative;
+}
+.navbar .navbar-nav li:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #ee715a;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transition: all 0.3s;
+}
+.navbar .navbar-nav li:hover:before {
+  width: 100%;
+  left: 0;
+}
+.navbar .navbar-nav .dropdown-menu {
+  background-color: #F3F2DC;
+  opacity: 0.8;
+  border: 0;
+  box-shadow: 2px 2px 2px 2px #ee715a;
+}
+.navbar .navbar-nav .dropdown-menu a:hover {
+  background-color: #F3F2DC;
+  color: #ee715a;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.navbar .navbar-nav #navbarDropdownMenuLink {
+  background-color: #ee715a;
+}
+
+.home {
+  width: 100%;
+  height: 800px;
+  display: flex;
+}
+.home .galeria {
+  width: 40%;
+  background-color: #F3F2DC;
+  display: flex;
+  overflow: hidden;
+}
+.home .galeria .izquierda-galeria {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 5px;
+  margin-left: 10px;
+  -webkit-animation: downup 10s infinite linear;
+          animation: downup 10s infinite linear;
+  animation-direction: reverse;
+}
+@-webkit-keyframes downup {
+  from {
+    transform: translatey(-1000px);
+  }
+  to {
+    transform: translatey(-120px);
+  }
+}
+@keyframes downup {
+  from {
+    transform: translatey(-1000px);
+  }
+  to {
+    transform: translatey(-120px);
+  }
+}
+.home .galeria .izquierda-galeria:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.home .galeria .izquierda-galeria .imagen1 {
+  background-image: url("../imagenes/animacion/andrei-chikatilo.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.home .galeria .izquierda-galeria .imagen2 {
+  background-image: url("../imagenes/animacion/ed-gein.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.home .galeria .izquierda-galeria .imagen3 {
+  background-image: url("../imagenes/animacion/edmund-kemper.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.home .galeria .izquierda-galeria .imagen4 {
+  background-image: url("../imagenes/animacion/jeffrey-dahmer.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.home .galeria .derecha-galeria {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 5px;
+  padding-top: 200px;
+  margin-right: 8px;
+  -webkit-animation: downup 10s infinite linear;
+          animation: downup 10s infinite linear;
+  animation-direction: reverse;
+}
+.home .galeria .derecha-galeria:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.home .galeria .derecha-galeria .imagen5 {
+  background-image: url("../imagenes/animacion/luis-alfredo-garavito.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.home .galeria .derecha-galeria .imagen6 {
+  background-image: url("../imagenes/animacion/pedro-alonsolopez.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.home .galeria .derecha-galeria .imagen7 {
+  background-image: url("../imagenes/animacion/richard-ramirez.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.home .galeria .derecha-galeria .imagen8 {
+  background-image: url("../imagenes/animacion/ted-bundy.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.home .galeria .imagen {
+  width: 98%;
+  min-height: 380px;
+  border-radius: 11px;
+}
+.home .galeria .imagen:hover {
+  transform: scale(1.1);
+  filter: opacity(0.5);
+}
+.home .inner {
+  width: 60%;
+  padding-top: 250px;
+  margin-bottom: 0px;
+  border-radius: 0%;
+  background-color: #F3F2DC;
+  overflow: hidden;
+}
+.home .inner .display-4 {
+  color: #e63312;
+  font-family: "Poppins", sans-serif;
+}
+.home .inner .lead {
+  display: block;
+  font-size: 21px;
+  font-size: bold;
+  font-family: "Basis Grotesque Pro", sans-serif;
+  white-space: nowrap;
+  width: 25ch;
+  color: #2c2f3f;
+  -webkit-animation: typing 8s steps(25), blink 1s step-end alternate;
+          animation: typing 8s steps(25), blink 1s step-end alternate;
+  overflow: hidden;
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 519px) {
+  .home {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .home .galeria {
+    width: 100%;
+    height: 50%;
+  }
+  .home .inner {
+    width: 100%;
+    height: 50%;
+    padding-top: 10px;
+  }
+  .home .inner .lead {
+    width: 90%;
+    -webkit-margin-before: 0%;
+            margin-block-start: 0%;
+    -webkit-margin-after: 0%;
+            margin-block-end: 0%;
+  }
+}
+@media (min-width: 520px) and (max-width: 982px) {
+  .home {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .home .galeria {
+    width: 100%;
+    height: 50%;
+  }
+  .home .inner {
+    width: 100%;
+    height: 50%;
+    padding-top: 70px;
+  }
+  .home .inner .lead {
+    width: 90%;
+    -webkit-margin-before: 0%;
+            margin-block-start: 0%;
+    -webkit-margin-after: 0%;
+            margin-block-end: 0%;
+  }
+}
+.biografia {
+  width: 100%;
+  height: 780px;
+}
+.biografia .superior {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  background-color: #D8DBDA;
+}
+.biografia .superior img {
+  border-radius: 0.3rem;
+  position: absolute;
+  box-shadow: 2px 2px 5px #2c2f3f;
+}
+.biografia .inferior {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #e63312;
+}
+
+.escrito-biografia {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+.escrito-biografia .m-3 {
+  color: #e63312;
+}
+.escrito-biografia p {
+  font-size: 18px;
+  color: #2c2f3f;
+}
+
+@media (max-width: 519px) {
+  .biografia {
+    height: 650px;
+  }
+  .biografia img {
+    height: 450px;
+    width: 90%;
+  }
+}
+@media (min-width: 520px) and (max-width: 982px) {
+  .biografia {
+    height: 750px;
+  }
+  .biografia img {
+    height: 550px;
+    width: 90%;
+  }
+}
+.escrito-publicaciones .text-center {
+  color: #e63312;
+}
+.escrito-publicaciones p {
+  font-size: 18px;
+  color: #2c2f3f;
+}
+
+.publicaciones {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.publicaciones .card {
+  background-color: #F3F2DC;
+}
+.publicaciones .card .card-title {
+  color: #e63312;
+}
+.publicaciones .card .card-text {
+  font-size: 18px;
+  color: #2c2f3f;
+}
+.publicaciones .card .btn-primary {
+  background-color: #dc3545;
+  font-weight: bold;
+  border-color: #dc3545;
+  border-radius: 8px;
+}
+.publicaciones .card .btn-primary:hover {
+  background-color: #05a0d0;
+  border-color: #05a0d0;
+}
+
+@media (max-width: 768px) {
+  .escrito-publicaciones {
+    padding-right: 0%;
+    padding-left: 0%;
+  }
+  .escrito-publicaciones .text-center {
+    margin: 0%;
+  }
+}
+.escrito-contacto h2 {
+  color: #e63312;
+}
+.escrito-contacto p {
+  font-size: 18px;
+  color: #2c2f3f;
+}
+
+@media (max-width: 768px) {
+  .escrito-contacto {
+    padding-right: 0%;
+    padding-left: 0%;
+  }
+}
+.contact-form {
+  background: -webkit-linear-gradient(left, #05a0d0, #A2BECE);
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 70%;
+  box-shadow: 0px 10px 10px -6px #05a0d0;
+}
+.contact-form form {
+  padding: 14%;
+}
+.contact-form form .row {
+  margin-bottom: -7%;
+}
+.contact-form h3 {
+  margin-bottom: 8%;
+  margin-top: -10%;
+  text-align: center;
+  color: #e63312;
+}
+.contact-form .btnContact {
+  width: 50%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5%;
+  background: #e63312;
+  font-weight: 600;
+  color: #D8DBDA;
+  cursor: pointer;
+}
+.contact-form .form-control {
+  border-radius: 1rem;
+}
+.contact-form .contact-image {
+  text-align: center;
+}
+.contact-form .contact-image img {
+  border-radius: 6rem;
+  width: 11%;
+  margin-top: -3%;
+}
+.contact-form .btnContactSubmit {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  color: #D8DBDA;
+  background-color: #05a0d0;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    width: 85%;
+  }
+  .contact-form .btnContact {
+    width: 60%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1071px) {
+  .contact-form {
+    width: 75%;
+  }
+  .contact-form .btnContact {
+    width: 70%;
+  }
+}
+.footer-superior {
+  background-color: #d8cec0;
+}
+
+.footer-inferior {
+  background-color: #2c2f3f;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Basis Grotesque Pro", sans-serif;
+}
+
+body {
+  background-color: #F3F2DC;
+}
+
+.audio {
+  width: 350px;
+  height: 190px;
+  border-radius: 10px;
+  margin: 0% auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../imagenes/Serialmente-3.jpg");
+}
+
+.parallax-ted-bundy {
+  height: 600px;
+  width: 90%;
+  margin: 0% auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../imagenes/ted-bundy.jpg");
+  background-attachment: fixed;
+}
+.parallax-ted-bundy h1 {
+  color: #F3F2DC;
+  font-size: 65px;
+  font-family: "Poppins", sans-serif;
+}
+
+.parallax-richard-ramirez {
+  height: 600px;
+  width: 90%;
+  margin: 0% auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../imagenes/richard-ramirez.jpg");
+  background-attachment: fixed;
+}
+.parallax-richard-ramirez h1 {
+  color: #F3F2DC;
+  font-size: 65px;
+  font-family: "Poppins", sans-serif;
+}
+
+.parallax-pedro-alonsolopez {
+  height: 600px;
+  width: 90%;
+  margin: 0% auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../imagenes/pedro-alonsolopez.jpg");
+  background-attachment: fixed;
+}
+.parallax-pedro-alonsolopez h1 {
+  color: #F3F2DC;
+  font-size: 65px;
+  font-family: "Poppins", sans-serif;
+}
+
+.parallax-luis-alfredo-garavito {
+  height: 600px;
+  width: 90%;
+  margin: 0% auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../imagenes/luis-alfredo-garavito.jpg");
+  background-attachment: fixed;
+}
+.parallax-luis-alfredo-garavito h1 {
+  color: #F3F2DC;
+  font-size: 65px;
+  font-family: "Poppins", sans-serif;
+}
+
+.parallax-jeffrey-dahmer {
+  height: 600px;
+  width: 90%;
+  margin: 0% auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../imagenes/jeffrey-dahmer.jpg");
+  background-attachment: fixed;
+}
+.parallax-jeffrey-dahmer h1 {
+  color: #F3F2DC;
+  font-size: 65px;
+  font-family: "Poppins", sans-serif;
+}
+
+.parallax-edmund-kemper {
+  height: 600px;
+  width: 90%;
+  margin: 0% auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../imagenes/edmund-kemper.jpg");
+  background-attachment: fixed;
+}
+.parallax-edmund-kemper h1 {
+  color: #F3F2DC;
+  font-size: 65px;
+  font-family: "Poppins", sans-serif;
+}
+
+.parallax-ed-gein {
+  height: 600px;
+  width: 90%;
+  margin: 0% auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../imagenes/ed-gein.jpg");
+  background-attachment: fixed;
+}
+.parallax-ed-gein h1 {
+  color: #F3F2DC;
+  font-size: 65px;
+  font-family: "Poppins", sans-serif;
+}
+
+.parallax-andrei-chikatilo {
+  height: 600px;
+  width: 90%;
+  margin: 0% auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../imagenes/andrei-chikatilo.jpg");
+  background-attachment: fixed;
+}
+.parallax-andrei-chikatilo h1 {
+  color: #F3F2DC;
+  font-size: 65px;
+  font-family: "Poppins", sans-serif;
+}
+
+.escrito-10datos {
+  margin-bottom: 40px;
+}
+.escrito-10datos h2 {
+  color: #e63312;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #e63312;
+          text-decoration-color: #e63312;
+}
+.escrito-10datos p {
+  font-size: 20px;
+}/*# sourceMappingURL=estilos.css.map */

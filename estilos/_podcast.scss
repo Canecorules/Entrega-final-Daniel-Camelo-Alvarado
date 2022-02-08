@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('http://fonts.cdnfonts.com/css/basis-grotesque-pro');
+
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Basis Grotesque Pro', sans-serif;
+}
+
+// Variables Colores
+
+$color2:rgb(230, 51, 18);
+$color6:#F3F2DC;
+
+body {
+    background-color: $color6;
+}
+
+.audio {
+    width: 350px;
+    height: 190px;
+    border-radius: 10px;
+    margin: 0% auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../imagenes/Serialmente-3.jpg");
+}
+
+@each $asesinoserial in ted-bundy,
+richard-ramirez,
+pedro-alonsolopez,
+luis-alfredo-garavito,
+jeffrey-dahmer,
+edmund-kemper,
+ed-gein,
+andrei-chikatilo {
+
+    .parallax-#{$asesinoserial} {
+        height: 600px;
+        width: 90%;
+        margin: 0% auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: end;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("../imagenes/#{$asesinoserial}.jpg");
+        background-attachment: fixed;
+
+        h1 {
+            color: $color6;
+            font-size: 65px;
+            font-family: 'Poppins', sans-serif;
+        }
+    }
+}
+
+.escrito-10datos {
+    margin-bottom: 40px;
+
+    h2 {
+        color: $color2;
+        text-decoration: underline;
+        text-decoration-color: $color2;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
